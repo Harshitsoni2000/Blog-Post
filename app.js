@@ -30,3 +30,14 @@ app.get("/about", (req, res)=> {
 app.get("/contact", (req, res)=> {
   res.render("contact", {contactContent: contactStartingContent});
 });
+
+app.get("/compose", (req, res)=> {
+  res.render("compose");
+});
+
+app.post("/compose", (req, res)=> {
+  const post={
+    title: req.body.postTitle,
+    body: req.body.postBody
+  };
+});
