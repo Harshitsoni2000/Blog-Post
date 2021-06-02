@@ -15,6 +15,15 @@
     color: #1abc9c !important;
 }
 
+.heading {
+  display: flex;
+  align-items: center;
+}
+
+.heading h2 {
+  padding-left: 1.5rem; 
+}
+
 .footer-padding {
 	padding-bottom: 60px;
 }

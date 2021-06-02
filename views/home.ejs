@@ -3,9 +3,16 @@
 <h1>Home</h1>
 <p><%= homeContent %></p>
 
-  <% posts.forEach((post)=> { %>
-    <h2><%= post.title %></h2>
-    <p><%= post.body.substring(0, 100)+"..." %> <a href="/posts/<%= post.title %>">Read Post</a> </p>
+  <% posts.forEach((doc)=> { %>
+    <div>
+      <div class="heading">
+        <form action="/delete" method="post">
+          <input type="checkbox" name="checkbox" value="<%= doc.title %>" onchange="this.form.submit()">
+        </form>
+        <h2><%= doc.title %></h2>
+      </div>
+      <p><%= doc.body.substring(0, 100)+"..." %> <a href="/posts/<%= doc.title %>">Read Post</a> </p>
+    </div>
   <% }); %>
 
 <%- include("partials/footer"); -%>
